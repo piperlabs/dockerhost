@@ -1,0 +1,30 @@
+proxyurl:
+daemon:
+  host: localhost
+  port: 6789
+key:
+  privatepath:
+  publicpath:
+defaulthost:
+  user: piper
+  password: password
+  port: 22
+  memory: 512
+  cpus: 1
+  disksize: 5000
+  system:
+    name: ubuntu
+    version: 14.04.4
+  provider: virtualbox
+  container: none
+internaldir: {{ .product.piperDir }}
+workspacedir: /home/{{ .product.host.User }}/piperWorkspace
+
+docker:
+  daemon:
+    host: localhost
+    port: {{ .product.daemonPort }}
+    apiversion: 1.27
+  registry:
+    host: localhost
+    port: {{ .product.registryPort }}
